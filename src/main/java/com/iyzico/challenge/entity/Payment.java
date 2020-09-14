@@ -37,4 +37,13 @@ public class Payment {
     public void setBankResponse(String bankResponse) {
         this.bankResponse = bankResponse;
     }
+
+    @Override
+    public String toString() {
+        return "Payment{" +
+                "id=" + id +
+                ", price=" + price +
+                ", bankResponse='" + bankResponse + '\'' +
+                '}';
+    }
 }

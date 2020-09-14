@@ -2,10 +2,23 @@ server:
   port: 8080
 spring:
   datasource:
-    url: jdbc:hsqldb:hsql:/localhost:9001/db
+    url: jdbc:hsqldb:file:src/main/resources/db/db
     driverClassName: org.hsqldb.jdbcDriver
     username: root
     password: pass
+    tomcat:
+      validation-query: SELECT 1
+      validation-query-timeout: 5000
+      test-on-borrow: true
+      test-on-connect: true
+    hikari:
+      connection-test-query: SELECT 1
+      validation-timeout: 5000
   jpa:
     show-sql: true
     open-in-view: false
+    hibernate:
+      ddl-auto: update
+springdoc:
+  swagger-ui:
+    path: /api
